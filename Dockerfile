@@ -3,10 +3,8 @@ WORKDIR /opt/
 ARG CUMULUS_URL=https://github.com/napalm-automation-community/napalm-cumulus/archive/develop.tar.gz
 RUN wget -q -O - "${CUMULUS_URL}" | tar xz
 WORKDIR /opt/napalm-cumulus-develop
-RUN pip install -r requirements.txt
-RUN pip install -r requirements-dev.txt
 RUN python setup.py install --user
-WORKDIR /opt/netbox
-RUN pip install \
+#WORKDIR /opt/netbox
+#RUN pip install \
 # Napalm-cumulus
-      napalm-cumulus
+#      napalm-cumulus
